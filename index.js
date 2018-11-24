@@ -6,7 +6,6 @@ const pg = require('./database')
 express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'hbs')
-  .use('/static', express.static('static'))
   .use(cache.route(2000))
   .get('/', async (req, res) => {
     const msgStats = await pg.msgToday()
