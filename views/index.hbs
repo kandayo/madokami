@@ -1,0 +1,17 @@
+<section id="stats">
+  <svg
+    class="sparkline"
+    stroke-width="5"
+    stroke="rgb(177,13,201)"
+    fill="#111111"
+    width="900"
+    height="250"></svg>
+
+  <script src="/static/js/sparkline.js"></script>
+  <script>
+    sparkline.sparkline(document.querySelector('.sparkline'), [{{values}}])
+  </script>
+</section>
+
+<h1>Akane#4349</h1>
+<h2>Listened to {{dispatches}} events</h2>
