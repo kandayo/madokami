@@ -13,7 +13,7 @@ express()
 
     res.render('index', {
       values: msgStats.rows[0]['array'],
-      dispatches: dispatches.rows[0]['count'].toLocaleString()
+      dispatches: Number(dispatches.rows[0]['count']).toLocaleString()
     })
   })
   .use((req, res, next) => {
