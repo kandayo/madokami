@@ -10,10 +10,12 @@ express()
   .get('/', async (req, res) => {
     const msgStats = await pg.msgToday()
     const dispatches = await pg.dispatchesCount()
+    const dbSize = await pg.dbSize()
 
     res.render('index', {
       values: msgStats.rows[0]['array'],
-      dispatches: Number(dispatches.rows[0]['count']).toLocaleString()
+      dispatches: Number(dispatches.rows[0]['count']).toLocaleString(),
+      dbSize: dbSize.rows[0]['pg_size_pretty']
     })
   })
   .use((req, res, next) => {

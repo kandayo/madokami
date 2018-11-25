@@ -15,5 +15,8 @@ module.exports = {
   },
   dispatchesCount: () => {
     return pg.query('select count(*) from dispatches;')
+  },
+  dbSize: () => {
+    return pg.query(`select pg_size_pretty(pg_database_size('akane'));`)
   }
 }
