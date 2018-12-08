@@ -10,20 +10,22 @@ express()
   .use(cache.route(2000))
   .get('/', async (req, res) => {
     const packets = await pg.packets()
-    const packetsSize = await pg.packetsCount()
     const dbSize = await pg.dbSize()
-
     const table = new Table()
+
+    const packetsSize = await packets.rows.reduce((total, packet) => {
+      return total + Number(packet['times'])
+    }, 0)
 
     packets.rows.forEach((packet) => {
       table.cell('Event', packet.name)
-      table.cell('Count', Number(packet.times))
+      table.cell('Count', Number(packet.times).toLocaleString())
       table.newRow()
     })
 
     res.render('index', {
       table: table.print(),
-      dispatches: Number(packetsSize.rows[0]['count']).toLocaleString(),
+      packets: packetsSize.toLocaleString(),
       dbSize: dbSize.rows[0]['pg_size_pretty']
     })
   })

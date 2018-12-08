@@ -8,9 +8,6 @@ module.exports = {
   packets: () => {
     return pg.query('select * from packets;')
   },
-  packetsCount: () => {
-    return pg.query(`select reltuples::bigint as count from pg_class where relname = 'packets';`)
-  },
   dbSize: () => {
     return pg.query(`select pg_size_pretty(pg_database_size('akane'));`)
   }
