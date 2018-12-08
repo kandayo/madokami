@@ -5,6 +5,13 @@
     <meta charset="utf-8">
     <link rel='stylesheet' href='/css/style.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=VT323'>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const html = document.body.innerHTML
+        document.body.innerHTML = html.replace(/(?<!h)(\d+|,)/g, `<span class='purple'>$1</span>`);
+      });
+    </script>
   </head>
   <body>
     {{{body}}}

@@ -5,10 +5,10 @@ body {
   margin: 30px 30px;
 }
 
-h1 {
-  color: #B10DC9;
-}
-
 pre {
   font-family: 'VT323';
+}
+
+.purple {
+  color: #B10DC9;
 }
