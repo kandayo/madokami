@@ -20,6 +20,7 @@ express()
     packets.rows.forEach((packet) => {
       table.cell('Event', packet.name)
       table.cell('Count', Number(packet.times).toLocaleString())
+      table.sort('Event')
       table.newRow()
     })
 
