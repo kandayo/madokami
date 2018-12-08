@@ -9,7 +9,7 @@
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const html = document.body.innerHTML
-        document.body.innerHTML = html.replace(/[^h]((?:\d+,?){1,})/g, ` <span class='purple'>$1</span>`);
+        document.body.innerHTML = html.replace(/[^h]((?:\d+,?){1,}| MB)/g, ` <span class='purple'>$1</span>`);
       });
     </script>
   </head>
