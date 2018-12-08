@@ -1,7 +1,14 @@
 body {
   background-color: #111111;
   color: #FFFFFF;
-  font-family: 'Oswald';
-  margin-top: 50px;
-  text-align: center;
+  font-family: 'VT323';
+  margin: 20px 20px;
+}
+
+h1 {
+  color: #B10DC9;
+}
+
+pre {
+  font-family: 'VT323';
 }

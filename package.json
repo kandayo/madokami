@@ -6,7 +6,7 @@
   "author": "kandayo",
   "license": "ISC",
   "dependencies": {
-    "@fnando/sparkline": "^0.3.10",
+    "easy-table": "^1.1.1",
     "express": "^4.16.4",
     "express-redis-cache": "^1.1.3",
     "hbs": "^4.0.1",
